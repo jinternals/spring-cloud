@@ -20,6 +20,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<docker.image.prefix>mradul</docker.image.prefix>
+		<parent.dir>.</parent.dir>
 	</properties>
 
 	<modules>
@@ -67,6 +68,15 @@
 	</dependencyManagement>
 
 	<build>
+		<filters>
+			<filter>${parent.dir}/profiles/${build.profile.id}/config.properties</filter>
+		</filters>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -86,5 +96,23 @@
 			<!-- end::plugin[] -->
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.profile.id>local</build.profile.id>
+			</properties>
+		</profile>
+		<profile>
+			<id>docker</id>
+			<properties>
+				<build.profile.id>docker</build.profile.id>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>

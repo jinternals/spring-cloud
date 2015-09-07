@@ -25,7 +25,9 @@
 	<name>spring-cloud-config-server</name>
 	<url>http://maven.apache.org</url>
 
-
+	<properties>
+		<parent.dir>..</parent.dir>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -93,6 +95,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<addResources>false</addResources>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
