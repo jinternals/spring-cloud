@@ -1,5 +1,6 @@
 FROM java:8
 VOLUME /tmp
+LABEL  application.name="${release.module.config.server.name}" application.version="${release.project.version}"
 ENV TERM xterm
 RUN apt-get update
 RUN apt-get install -y nano

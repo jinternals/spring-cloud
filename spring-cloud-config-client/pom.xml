@@ -24,6 +24,7 @@
 	<artifactId>spring-cloud-config-client</artifactId>
 	<name>spring-cloud-config-client</name>
 	<url>http://maven.apache.org</url>
+	<description>spring cloud config client</description>
 
 	<properties>
 		<parent.dir>..</parent.dir>

@@ -24,6 +24,7 @@
 	<artifactId>spring-cloud-config-server</artifactId>
 	<name>spring-cloud-config-server</name>
 	<url>http://maven.apache.org</url>
+	<description>spring cloud config server</description>
 
 	<properties>
 		<parent.dir>..</parent.dir>
@@ -54,6 +55,10 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-rsa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jolokia</groupId>
+			<artifactId>jolokia-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
